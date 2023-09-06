@@ -12,12 +12,12 @@ def main():
         pw.login(username, password, encryption_key)
 
     while True:
-        print("--------------------------------")
-        print("1. Generare parolă puternică")
-        print("2. Stocare parolă")
-        print("3. Obținere parolă")
-        print("4. Ieșire")
-        print("--------------------------------")
+        print("""--------------------------------
+        "1. Generare parolă "
+        "2. Stocare parolă"
+        "3. Obținere parolă"
+        "4. Ieșire"
+        --------------------------------""")
 
         choice = input("Introduceți opțiunea: ")
 
