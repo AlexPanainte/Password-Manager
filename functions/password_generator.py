@@ -5,7 +5,7 @@ class PasswordGenerator:
     def __init__(self):
         pass
 
-    def generate_strong_password(self, length=12):
+    def generate_password(self, length=12):
         characters = string.ascii_letters + string.digits + string.punctuation
         print("Select level of security:\n1. Low\n2. Medium\n3. High")
 
