@@ -24,18 +24,18 @@ class Database:
             self.connect.close()
 
     def select_info_for_log_in(self):
-        querry="SELECT username,password FROM accounts.registered_users;"
+        querry="SELECT USERNAME,PASSWORD,ENCRYPTION_KEY FROM accounts.registered_users;"
         self.cursor.execute(querry)
 
         rows = self.cursor.fetchall()
         usernames = [row for row in rows]
         return usernames
     
-    def log_in(self,username,password):
+    def log_in(self,username,password,key):
         info=self.select_info_for_log_in()
 
-        for db_username,db_password in info:
-            if username == db_username and password == db_password:
+        for db_username,db_password,db_key in info:
+            if username == db_username and password == db_password and key==db_key:
                 return True
         return False
     

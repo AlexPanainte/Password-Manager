@@ -19,6 +19,6 @@ def operations():
 """
 1. Generate Password
 2. Store Account
-3. Get Password
+3. Get Account
 4. Exit
 """)

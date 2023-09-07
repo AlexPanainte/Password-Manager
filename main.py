@@ -17,7 +17,8 @@ def main():
         if choice == "1":
             username = input("Add username: ")
             password = input("Add password: ")
-            status = db.log_in(username, password)
+            encryption_key=input("Add encryption key: ")
+            status = db.log_in(username, password,encryption_key)
             if status:
                 print("\nLog In successful\n")
 
@@ -30,8 +31,6 @@ def main():
                         print(f"\nGenerated Password: {generated_password}\n")
 
                     elif operation_choice == "2":
-
-                        encryption_key=input("Add encryption key: ")
                         service = input("Enter service name: ")
                         username= input("Enter account name: ")
                         password= input("Enter password name: ")
@@ -39,13 +38,9 @@ def main():
                         pwm.store_account(encryption_key,service,username, password)
 
                     elif operation_choice == "3":
-                        account_name = input("Enter account name: ")
-                        stored_password = pwm.get_password(username, account_name)
-                        if stored_password:
-                            print(f"Password for {account_name}: {stored_password}\n")
-                        else:
-                            print(f"No password found for {account_name}\n")
-
+                        service = input("Enter service name: ")
+                        print(pwm.get_password(service,encryption_key))
+                        
                     elif operation_choice == "4":
                         break
 
